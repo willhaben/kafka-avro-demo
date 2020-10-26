@@ -1,7 +1,5 @@
 package at.willhaben.tech.avrokafkademo.services;
 
-
-
 import at.willhaben.tech.avro.SomeRecord;
 import org.apache.avro.specific.SpecificRecord;
 import org.springframework.beans.factory.annotation.Autowired;

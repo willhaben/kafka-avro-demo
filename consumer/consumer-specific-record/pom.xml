@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>at.willhaben.tech</groupId>
-            <artifactId>avro-schema</artifactId>
+            <artifactId>avro-schema-v1</artifactId>
             <version>0.0.4</version>
         </dependency>
     </dependencies>

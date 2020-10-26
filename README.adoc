@@ -1,0 +1,18 @@
+# setup
+
+install jdk 11, docker compose
+
+compile project with  `mvn clean compile`.
+This also generates the java classes from the avro schema files.
+
+# start
+
+start kafka and schema registry via docker compose:
+
+```
+> cd docker
+> docker-compose up
+```
+
+after that, fist start the three java consumers (i.e. via IDE) then the java producer
+

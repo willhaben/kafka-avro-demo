@@ -2,11 +2,7 @@ package at.willhaben.tech.avrokafkademo.consumer.services;
 
 
 import at.willhaben.tech.avro.SomeRecord;
-import org.apache.avro.generic.GenericRecord;
-import org.apache.avro.io.BinaryDecoder;
-import org.apache.avro.io.DecoderFactory;
-import org.apache.avro.io.ValidatingDecoder;
-import org.apache.avro.specific.SpecificDatumReader;
+import at.willhaben.tech.avro.SomeWrongRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +20,11 @@ public class Consumer {
         logger.info(String.format("Consumed someTopic -> %s", read));
     }
 
+    //@KafkaListener(topics = "someTopic")
+    public void consumeSomeWrongRecord(SomeWrongRecord read) throws IOException {
+
+        logger.info(String.format("Consumed someTopic -> %s", read));
+    }
 
 
 }
