@@ -17,7 +17,7 @@
 	</parent>
 	<groupId>at.willhaben.tech</groupId>
 	<artifactId>avro-kafka-demo</artifactId>
-	<version>0.0.4</version>
+	<version>1-SNAPSHOT</version>
 	<name>avro-kafka-demo</name>
 	<description>Demo project tech.willhaben.at</description>
 

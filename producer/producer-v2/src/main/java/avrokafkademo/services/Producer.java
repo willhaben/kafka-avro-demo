@@ -1,4 +1,4 @@
-package at.willhaben.tech.avrokafkademo.services;
+package avrokafkademo.services;
 
 import at.willhaben.tech.avro.SomeRecord;
 import org.apache.avro.specific.SpecificRecord;
@@ -17,7 +17,7 @@ public class Producer {
 
     private Logger logger = Logger.getLogger("Producer");
 
-    @Scheduled(fixedRate = 2000,initialDelay = 0)
+    @Scheduled(fixedRate = 2000, initialDelay = 0)
     public void sendMessage() {
         final SomeRecord data = new SomeRecord(getRandomData("name"), getRandomData("data"));
         logger.info(String.format("Producing SomeRecord -> %s", data));

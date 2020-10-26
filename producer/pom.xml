@@ -5,16 +5,15 @@
     <parent>
         <artifactId>avro-kafka-demo</artifactId>
         <groupId>at.willhaben.tech</groupId>
-        <version>0.0.4</version>
+        <version>1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>producer</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>at.willhaben.tech</groupId>
-            <artifactId>avro-schema-v2</artifactId>
-            <version>0.0.4</version>
-        </dependency>
-    </dependencies>
+    <packaging>pom</packaging>
+    <modules>
+        <module>producer-v1</module>
+        <module>producer-v2</module>
+    </modules>
+
 </project>

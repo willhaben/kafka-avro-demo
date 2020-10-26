@@ -5,7 +5,7 @@
     <parent>
         <artifactId>avro-kafka-demo</artifactId>
         <groupId>at.willhaben.tech</groupId>
-        <version>0.0.4</version>
+        <version>1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

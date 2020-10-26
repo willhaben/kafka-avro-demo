@@ -5,7 +5,7 @@
     <parent>
         <artifactId>consumer</artifactId>
         <groupId>at.willhaben.tech</groupId>
-        <version>0.0.4</version>
+        <version>1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
         <dependency>
             <groupId>at.willhaben.tech</groupId>
             <artifactId>avro-schema-v1</artifactId>
-            <version>0.0.4</version>
+            <version>1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
