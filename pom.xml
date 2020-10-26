@@ -2,6 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+	<modules>
+		<module>consumer</module>
+		<module>producer</module>
+		<module>avro-schema</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -10,7 +16,7 @@
 	</parent>
 	<groupId>at.willhaben.tech</groupId>
 	<artifactId>avro-kafka-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.4</version>
 	<name>avro-kafka-demo</name>
 	<description>Demo project tech.willhaben.at</description>
 
@@ -30,6 +36,16 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.confluent</groupId>
+			<artifactId>kafka-avro-serializer</artifactId>
+			<version>5.2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
@@ -54,36 +70,7 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
-	<plugins>
-		<!-- other maven plugins in the project -->
-		<plugin>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro-maven-plugin</artifactId>
-			<version>1.8.2</version>
-			<executions>
-				<execution>
-					<phase>generate-sources</phase>
-					<goals>
-						<goal>schema</goal>
-					</goals>
-					<configuration>
-						<sourceDirectory>src/main/resources/avro</sourceDirectory>   (5)
 
-						<outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
-						<stringType>String</stringType>
-					</configuration>
-				</execution>
-			</executions>
-		</plugin>
-	</plugins>
 
 </project>
