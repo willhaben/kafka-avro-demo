@@ -6,8 +6,7 @@
 	<modules>
 		<module>consumer</module>
 		<module>producer</module>
-		<module>avro-schema-v1</module>
-		<module>avro-schema-v2</module>
+		<module>avro-schema</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

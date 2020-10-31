@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>producer-v1</module>
-        <module>producer-v2</module>
     </modules>
 
 </project>

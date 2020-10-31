@@ -1,8 +1,7 @@
 package at.willhaben.tech.avrokafkademo.consumer.services;
 
 
-import at.willhaben.tech.avro.SomeRecord;
-import at.willhaben.tech.avro.SomeWrongRecord;
+import at.willhaben.tech.avro.User;
 import org.apache.avro.Schema;
 import org.apache.avro.io.BinaryDecoder;
 import org.apache.avro.io.DecoderFactory;
@@ -24,10 +23,9 @@ public class Consumer<T> {
     @KafkaListener(topics = "someTopic")
     public void consumeRaw(byte[] message) throws IOException {
 
-        final SomeRecord read = decode(message, SomeRecord.SCHEMA$, SomeRecord.class);
-        final SomeWrongRecord read2 = decode(message, SomeWrongRecord.SCHEMA$, SomeWrongRecord.class);
+        final User read = decode(message, User.SCHEMA$, User.class);
+
         logger.info(String.format("Consumed someTopic SomeRecord -> %s", read));
-        logger.info(String.format("Consumed someTopic SomeWrongRecord -> %s", read2));
     }
 
     private <T extends SpecificRecordBase> T decode(byte[] message, Schema schema, Class<T> c) throws IOException {

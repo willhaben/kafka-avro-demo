@@ -1,8 +1,8 @@
 package at.willhaben.tech.avrokafkademo.consumer.services;
 
-
-import at.willhaben.tech.avro.SomeRecord;
-import at.willhaben.tech.avro.SomeWrongRecord;
+import at.willhaben.tech.avro.User;
+import at.willhaben.tech.avro.UserBackwardCompatible;
+import at.willhaben.tech.avro.UserForwardCompatible;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
@@ -15,14 +15,18 @@ public class Consumer {
     private Logger logger = Logger.getLogger("Consumer");
 
     @KafkaListener(topics = "someTopic")
-    public void consumeSomeRecord(SomeRecord read) throws IOException {
+    public void consumeSomeRecord(User read) throws IOException {
 
         logger.info(String.format("Consumed someTopic -> %s", read));
     }
 
-    //@KafkaListener(topics = "someTopic")
-    public void consumeSomeWrongRecord(SomeWrongRecord read) throws IOException {
+    //  @KafkaListener(topics = "someTopic")
+    public void consumeSomeWrongRecord(UserBackwardCompatible read) throws IOException {
+        logger.info(String.format("Consumed someTopic -> %s", read));
+    }
 
+    //@KafkaListener(topics = "someTopic")
+    public void consumeSomeWrongRecord(UserForwardCompatible read) throws IOException {
         logger.info(String.format("Consumed someTopic -> %s", read));
     }
 

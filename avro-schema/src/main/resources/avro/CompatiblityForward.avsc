@@ -1,0 +1,10 @@
+{"namespace": "at.willhaben.tech.avro",
+ "type": "record",
+ "name": "UserForwardCompatible",
+ "fields": [
+     {"name": "name", "type": "string"},
+     {"name": "surname", "type": "string"},
+     {"name": "language", "type": "string"},
+       {"name": "version", "type": "int"}
+ ]
+}

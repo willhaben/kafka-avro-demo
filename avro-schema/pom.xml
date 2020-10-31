@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>avro-schema-v1</artifactId>
+    <artifactId>avro-schema</artifactId>
 
     <build>
         <plugins>

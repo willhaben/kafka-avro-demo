@@ -1,8 +1,0 @@
-{"namespace": "at.willhaben.tech.avro",
- "type": "record",
- "name": "SomeRecord",
- "fields": [
-     {"name": "name", "type": "string"},
-     {"name": "data", "type": ["null","string"], "default":null}
- ]
-}

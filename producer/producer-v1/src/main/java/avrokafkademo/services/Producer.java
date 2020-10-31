@@ -1,6 +1,7 @@
 package avrokafkademo.services;
-
-import at.willhaben.tech.avro.SomeRecord;
+import at.willhaben.tech.avro.User;
+import at.willhaben.tech.avro.UserBackwardCompatible;
+import at.willhaben.tech.avro.UserForwardCompatible;
 import org.apache.avro.specific.SpecificRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -19,8 +20,12 @@ public class Producer {
 
     @Scheduled(fixedRate = 2000,initialDelay = 0)
     public void sendMessage() {
-        final SomeRecord data = new SomeRecord(getRandomData("name"));
-        logger.info(String.format("Producing SomeRecord -> %s", data));
+        final User user = new User("Matthias", "Kausl", "Happy " + System.currentTimeMillis(), 1);
+        final UserBackwardCompatible backwardCompatible = new UserBackwardCompatible("Matthias", "Happy " + System.currentTimeMillis(), "Java", 2);
+        final UserForwardCompatible forwardCompatible = new UserForwardCompatible("Matthias", "Kausl", "English", 3);
+
+        SpecificRecord data = forwardCompatible;
+        logger.info(String.format("Producing -> %s", data));
 
         this.kafkaTemplate.send("someTopic", data);
     }

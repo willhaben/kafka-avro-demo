@@ -1,0 +1,15 @@
+GET http://localhost:8081/subjects
+
+###
+
+GET http://localhost:8081/config
+
+
+###
+
+PUT http://localhost:8081/config
+Content-Type: application/vnd.schemaregistry.v1+json
+
+{
+  "compatibility": "FORWARD"
+}
