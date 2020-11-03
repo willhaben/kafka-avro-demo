@@ -1,0 +1,10 @@
+{"namespace": "at.willhaben.tech.avro",
+ "type": "record",
+ "name": "User",
+ "fields": [
+     {"name": "name", "type": "string"},
+     {"name": "skills", "type": ["null","string"], "default":null},
+      {"name": "language", "type": "string"},
+      {"name": "version", "type": "int"}
+ ]
+}
